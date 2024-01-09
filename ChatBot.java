@@ -73,28 +73,29 @@ public class ChatBot {
             System.out.println(); // line space between section
         }
 
-        Thread.sleep(2000);
-
-        System.out.println("What type of section did you got your items from?");
-        String chosenSection = input.nextLine();
-
         Thread.sleep(1000);
 
         System.out.print("Enter the quantity: ");
         itemQuantity = input.nextInt();
 
+        input.nextLine(); // consume line
+
         Thread.sleep(2000);
+
+        itemPrice = 0;
 
         // inputting purchased items
         // for ( initialization ; condition ; iteration)
-        for(int i = 0; i < itemQuantity; i++) {
+        for(int i = 1; i <= itemQuantity; i++) {
             System.out.print("Enter item " + i + ": ");
             itemName = input.nextLine();
 
             System.out.println("Enter the price: ");
             itemPrice = input.nextDouble();
 
-            amountDue = itemQuantity * itemPrice;
+            itemPrice += itemPrice;
+
+            input.nextLine();
         }
 
         Thread.sleep(2000);
@@ -103,11 +104,11 @@ public class ChatBot {
 
     public void writeOutput() {
         if (itemQuantity > 1) {
-            System.out.println("You are purchasing " + itemQuantity + " " + itemName + "(s) at " + itemPrice + " each.");
-            System.out.printf("Amount due is %.2f", amountDue);
+            System.out.println("You are purchasing " + itemQuantity + " items.");
+            System.out.printf("Total amount: %.2f", itemPrice);
         } else {
-            System.out.println("You are purchasing " + itemQuantity + " " + itemName + " at " + itemPrice + " each.");
-            System.out.printf("Amount due is %.2f", amountDue);
+            System.out.println("You are purchasing " + itemQuantity + " item.");
+            System.out.printf("Total amount: %.2f", itemPrice);
         }
     }
 }
