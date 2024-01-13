@@ -54,6 +54,8 @@ public class CoinDepartment {
 
         System.out.println("You may input the item's information that you purchase. :) ");
 
+        Thread.sleep(1000);
+        
         // print grocery sections by looping
         for (int i = 0; i < choices.length; i++) {
             // print the name of the grocery section
