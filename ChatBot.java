@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Thread;
 
-public class ChatBot {
+public class CoinDepartment {
     private final Scanner input = new Scanner(System.in);
 
     private String itemName;
@@ -47,14 +47,12 @@ public class ChatBot {
     public double getTotalCost() { return amountDue; }*/
 
     public void readInput() throws InterruptedException {
-        System.out.println("Hi there. I'm CoinBot :) Can I have your name please? :)");
-        String greeting = input.nextLine();
 
-        Thread.sleep(2000);
-
-        System.out.println("Hi " + greeting + "! CoinBot will be yor guide today! :)");
+        System.out.println("Hi ! CoinBot will be yor guide today! :)");
 
         Thread.sleep(1000);
+
+        System.out.println("You may input the item's information that you purchase. :) ");
 
         // print grocery sections by looping
         for (int i = 0; i < choices.length; i++) {
@@ -91,9 +89,9 @@ public class ChatBot {
             itemName = input.nextLine();
 
             System.out.println("Enter the price: ");
-            itemPrice = input.nextDouble();
+            int purchase  = input.nextInt();
 
-            itemPrice += itemPrice;
+            itemPrice += purchase;
 
             input.nextLine();
         }
